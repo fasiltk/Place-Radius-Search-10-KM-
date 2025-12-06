@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Place</title>
+</head>
+<body>
+
+<h2>Add a New Place</h2>
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+
+{% if success %}
+<p style="color:green;">{{ success }}</p>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="place_name" placeholder="Enter place name" required>
+    <button type="submit">Add Place</button>
+</form>
+
+</body>
+</html>

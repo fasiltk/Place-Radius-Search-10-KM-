@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nearby Places</title>
+</head>
+<body>
+
+<h2>Places within 10 KM of "{{ search_input }}"</h2>
+
+{% if places %}
+<ul>
+    {% for p in places %}
+        <li>{{ p.name }} - {{ p.distance }} km away</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No places found within 10 km.</p>
+{% endif %}
+
+</body>
+</html>
